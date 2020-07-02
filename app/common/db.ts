@@ -52,6 +52,20 @@ class connect{
         })
     }
 
+    public delete(params:any,callback:any){
+        this.initDB(params.bizType,params.collection,(db:any,collection:any)=>{
+            console.log("999")
+           
+            collection.removeOne(params.query,function(err:any,res:any){
+                console.log(params.query)
+                if(err){
+                    callback({err:err.message})
+                }else{
+                    callback(res)
+                }
+            })
+        })
+    }
     public getCollection(params:any,callback:any){
         this.initDB(params.bizType,params.collection,(db:any,collection:any)=>{
             callback(collection)

@@ -3,6 +3,7 @@ export default class user {
     test="1"
     queryUserInfoByPasswordAndUserName(data: any, callback: Function) {
         console.log("1234")
+        console.log(data)
         db.select({
             bizeType: "blog", //数据库
             collection: "user", //数据表

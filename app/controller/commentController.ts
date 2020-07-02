@@ -10,7 +10,7 @@ export default class commentController extends baseController{
         this.comment=new comment()
     }
 
-    @get("/saveComment")
+    @post("/saveComment")
     public saveComment(req:any,res:any){
         console.log("222")
         console.log(this.comment)
@@ -20,7 +20,7 @@ export default class commentController extends baseController{
         },(data:any)=>{this.success(data)})
     }
 
-    @get("/getCommentList")
+    @post("/getCommentList")
     public getCommentList(req:any,res:any){
         console.log("111")
         console.log(this.comment)
