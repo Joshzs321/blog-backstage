@@ -10,7 +10,6 @@ var cookieParser=require('cookie-parser')
  app.use(cookieParser());
  app.use(bodyParser.urlencoded({extended: false}));
  app.all('*', function (req, res, next) {
-    console.log("1234")
     res.header("Access-Control-Allow-Origin", req.header('origin'));
     res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild,token');
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");

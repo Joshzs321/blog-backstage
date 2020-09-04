@@ -18,7 +18,7 @@ export default class Router{
                             if(isFile){
                                 let controller=require("../../"+filedir)
                                 controller=controller.default||controller
-                                new controller()                         
+                                // new controller()                         
                             }else if(isDir){
                                 self.buildRouter(scanDir)
                             }

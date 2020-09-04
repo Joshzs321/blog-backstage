@@ -2,7 +2,7 @@ import {controller,get,post} from "../utils/decorator"
 //操作数据库的
 import artical from "../model/artical"
 import baseController from "./baseController" 
-@controller("/artical")
+@controller("/api/artical")
 export default class articalController extends baseController{
     artical:any
     constructor(){
@@ -13,7 +13,9 @@ export default class articalController extends baseController{
     @post("/saveArtical")
     public saveArtical(req:any,res:any){
         //有可能过期了，需要重新登录
+        console.log('11')
         let userId=this.getUserId()
+        console.log("articalController -> saveArtical -> userId", userId)
         if(!userId){
             this.error({
                 //前端根据这个状态吗在拦截器中跳转
